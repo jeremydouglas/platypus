@@ -1,40 +1,105 @@
 $global_padding: 30px;
- 
+
 @mixin list_reset
 {
     margin: 0;
     padding: 0;
     list-style: none;
 }
- 
+
 @mixin quick_cols($column_count: 2, $gutter_width: 1%)
 {
     $gutter_count: $column_count - 1;
     $total_gutter_widths: $gutter_count * $gutter_width;
     $total_column_widths: 100 - $total_gutter_widths;
     $column_width: $total_column_widths / $column_count;
- 
+
     clear: none;
     float: left;
     margin-right: $gutter_width / 2; // help out IE8 so we don't need js.
- 
+
     &:nth-child(1n)
     {
         float: left;
         clear: none;
         margin-right: $gutter_width;
     }
- 
+
     width: $column_width;
- 
+
     &:nth-child(#{$column_count}n + 1)
     {
         clear: both;
         margin-left: 0;
     }
- 
+
     &:nth-child(#{$column_count}n)
     {
         margin-right: 0;
+    }
+}
+
+@mixin respond_min($width)
+{
+    @if $fixed_size
+    {
+        @if $fixed_size >= $width
+        {
+            @content;
+        }
+    }
+    @else
+    {
+        @media screen and (min-width: $width)
+        {
+            @content;
+        }
+    }
+}
+
+@mixin respond_max($width)
+{
+    @if $fixed_size
+    {
+        @if $fixed_size <= $width
+        {
+            @content;
+        }
+    }
+    @else
+    {
+        @media screen and (max-width: $width)
+        {
+            @content;
+        }
+    }
+}
+
+@mixin respond_min_max($min, $max)
+{
+    @if $fixed_size
+    {
+        @if $fixed_size >= $min
+        {
+            @if $fixed_size <= $max
+            {
+                @content;
+            }
+        }
+    }
+    @else
+    {
+        @media screen and (min-width: $min) and (max-width: $max)
+        {
+            @content;
+        }
+    }
+}
+
+@mixin old_ie
+{
+    @if $fixed_size
+    {
+        @content;
     }
 }
