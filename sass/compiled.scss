@@ -1,1 +1,5 @@
-@import "bourbon/bourbon", "library", "fonts", "typography";
+/* Vendor */
+@import "../bower_compontents/bourbon/bourbon"
+
+/* Template */
+@import "library", "fonts", "typography";
