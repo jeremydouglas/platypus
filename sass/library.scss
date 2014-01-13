@@ -39,6 +39,8 @@ $global_padding: 30px;
     }
 }
 
+$fixed_size: false !default;
+
 @mixin respond_min($width)
 {
     @if $fixed_size
