@@ -12,8 +12,11 @@
     <meta name="Copyright" content="Jeremy Douglas Hoover 2013" >
     <meta name="Author" content="http://jeremyhoover.ca" >
 
-    <!--[if lte IE 8]>
-            <link rel="stylesheet" href="css/old_ie.css">
+    <!--[if lt IE 8]>
+            <link rel="stylesheet" href="css/ie6-7.css">
+    <![endif]-->
+    <!--[if IE 8]>
+            <link rel="stylesheet" href="css/ie8.css">
     <![endif]-->
     <!--[if gt IE 8]><!-->
             <link rel="stylesheet" href="css/compiled.css">
@@ -23,6 +26,10 @@
 </head>
 
 <body>
+
+    <!--[if lt IE 8]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
 
     <h1>Lorem ipsum dolor sit amet, <a href="$">consectetur adipisicing</a> elit. Necessitatibus iste omnis deserunt dolorem optio! Veniam, voluptas praesentium ab ducimus iusto vel unde rem pariatur nihil quo accusantium repellat autem necessitatibus.</h1>
 
@@ -56,9 +63,9 @@
         <li>Nullam id nisl et libero tempus malesuada.</li>
     </ol>
 
-    <script src="/bower_components/jquery/jquery.js"></script>
+    <script src="bower_components/jquery/jquery.js"></script>
     <!--[if lte IE 8]>
-            <script src="/bower_components/selectivizr/selectivizr.js"></script>
+            <script src="bower_components/selectivizr/selectivizr.js"></script>
     <![endif]-->
 
 </body>
