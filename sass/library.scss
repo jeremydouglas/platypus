@@ -1,5 +1,10 @@
 $global_padding: 30px;
 
+*
+{
+    @include box-sizing (border-box);
+}
+
 @mixin list_reset
 {
     margin: 0;
