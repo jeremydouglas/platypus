@@ -1,14 +1,14 @@
 body
 {
-    font: normal 16px/1.3 $font_regular;
+    font: normal 18px/1.5 $font_regular;
 }
 
 h1
 {
     margin-bottom: 0;
 
-    color: #000;
-    font: normal 28px/1 $font_bold;
+    color: $grey;
+    font: normal 28px/1 $font_regular;
 
     & + p
     {
@@ -17,7 +17,7 @@ h1
 
     @media (min-width: 980px)
     {
-        font-size: 40px;
+        font-size: 75px;
     }
 }
 
@@ -70,21 +70,6 @@ p, li
     {
         font-size: 18px;
     }
-}
-
-em, i
-{
-    font-family: $font_italic;
-}
-
-strong, b
-{
-    font-family: $font_bold;
-}
-
-em strong, strong em, i strong, strong i, b i, b em, em b, i b
-{
-    font-family: $font_bold_italic;
 }
 
 a

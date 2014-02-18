@@ -1,2 +1,10 @@
 vendor
 node_modules
+
+# OS or Editor folders
+.DS_Store
+.cache
+.project
+.settings
+nbproject
+Thumbs.db
