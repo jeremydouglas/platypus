@@ -1,4 +1,4 @@
-base-sass
+Sass Boilerplate
 =========
 
 Scss boilerplate
