@@ -1,0 +1,38 @@
+$global_padding: 30px;
+
+*
+{
+    @include box-sizing (border-box);
+}
+
+@mixin quick_cols($column_count: 2, $gutter_width: 1%)
+{
+    $gutter_count: $column_count - 1;
+    $total_gutter_widths: $gutter_count * $gutter_width;
+    $total_column_widths: 100 - $total_gutter_widths;
+    $column_width: $total_column_widths / $column_count;
+
+    clear: none;
+    float: left;
+    margin-right: $gutter_width / 2; // help out IE8 so we don't need js.
+
+    &:nth-child(1n)
+    {
+        float: left;
+        clear: none;
+        margin-right: $gutter_width;
+    }
+
+    width: $column_width;
+
+    &:nth-child(#{$column_count}n + 1)
+    {
+        clear: both;
+        margin-left: 0;
+    }
+
+    &:nth-child(#{$column_count}n)
+    {
+        margin-right: 0;
+    }
+}

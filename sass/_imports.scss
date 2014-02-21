@@ -3,7 +3,7 @@
 @import "../vendor/bourbon/app/assets/stylesheets/bourbon", "../vendor/normalize-scss/normalize";
 
 /* Base */
-@import "base/colours", "base/library", "base/fonts", "base/typography";
+@import "base/colours", "base/mixins", "base/fonts", "base/typography", "base/grid";
 
 /* Blocks */
 @import "blocks/header", "blocks/main_nav", "blocks/footer";
