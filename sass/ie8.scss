@@ -1,9 +1,0 @@
-/* This file is used for IE8 styles, a browser that doesn't 
-support media queries, eventually we will be able to delete this file
-when support for this browser is no longer needed.
-*/
-
-$old_ie: true;
-$fixed_size: 980px;
-
-@import "imports";

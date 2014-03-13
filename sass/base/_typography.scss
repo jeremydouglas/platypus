@@ -1,6 +1,6 @@
 body
 {
-    font: normal 18px/1.5 $font_regular;
+    font: normal 16px/1.5 $font_regular;
 }
 
 h1
@@ -13,11 +13,6 @@ h1
     & + p
     {
         margin-top: 5px;
-    }
-
-    @media (min-width: 980px)
-    {
-        font-size: 75px;
     }
 }
 
@@ -32,13 +27,6 @@ h2
     & + p
     {
         margin-top: 8px;
-    }
-
-    @media (min-width: 980px)
-    {
-        margin-top: 50px;
-
-        font-size: 30px;
     }
 }
 
@@ -58,25 +46,20 @@ h3
 h4
 {
     color: #777;
-    font: normal 17px/1.4 $font_regular;
+    font: normal 18px/1.4 $font_regular;
 }
 
 p, li
 {
     color: #626366;
-    font: normal 15px/1.5 $font_regular;
-
-    @media (min-width: 980px)
-    {
-        font-size: 18px;
-    }
+    font: normal 16px/1.5 $font_regular;
 }
 
 a
 {
     color: #000;
 
-    @include transition(all .2s);
+    transition: color .2s;
 
     &:hover, &:active, &:focus
     {
@@ -90,25 +73,10 @@ quote, blockquote
 
     color: #000;
     font: normal 17px/1.5 $font_regular;
-
-    @media (min-width: 980px)
-    {
-        font-size: 20px;
-    }
 }
 
 .leadin
 {
     color: #000;
     font: normal 24px/1.2 $font_regular;
-
-    @media (min-width: 768px)
-    {
-        font-size: 30px;
-    }
-
-    @media (min-width: 980px)
-    {
-        font-size: 40px;
-    }
 }

@@ -1,1 +1,14 @@
-@import "imports";
+// Vendor
+@import "../vendor/bower_components/normalize-scss/normalize";
+
+// Base
+@import "base/colours", "base/mixins", "base/fonts", "base/typography", "base/grid", "base/layout";
+
+// Elements
+@import "elements/buttons";
+
+// Blocks
+@import "blocks/header", "blocks/main_nav", "blocks/footer";
+
+// Pages
+@import "pages/home";
