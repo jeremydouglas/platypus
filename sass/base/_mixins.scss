@@ -4,17 +4,6 @@
     padding: 0;
     list-style: none;
 }
-
-<<<<<<< HEAD
-@mixin vertically_center {
-=======
-@mixin vertical_center {
->>>>>>> 2bc1a0556ac88d66f7b22d468791f96c9f27325f
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
 @mixin clearfix
 {
     &:before,
@@ -28,8 +17,14 @@
     }
 }
 
-.image_wrap
-{
+@mixin vertical_center {
+    position: relative;
+    top: 50%;
+
+    transform: translateY(-50%);
+}
+
+.image_wrap {
     position: relative;
 
     display: block;
@@ -68,6 +63,56 @@
 
         display: block;
         width: 100%;
+    }
+}
+
+@mixin justified_grid($child_tag: li, $child_count: 3, $child_gutter: 1%) {
+    width: 100%;
+
+    text-align: justify;
+
+    &:after
+    {
+        content: '';
+        display: inline-block;
+        width: 100%;
+    }
+
+    #{$child_tag} {
+        display: inline-block;
+        width: (100% / $child_count) - $child_gutter;
+
+        text-align: left;
+    }
+}
+
+@mixin matrix_grid($column_count: 2, $gutter: 1%) {
+    $gutter_count: $column_count - 1;
+    $total_gutter_widths: $gutter_count * $gutter;
+    $total_column_widths: 100 - $total_gutter_widths;
+    $column_width: $total_column_widths / $column_count;
+
+    clear: none;
+    float: left;
+
+    margin-right: $gutter / 2; // help out IE8 so we don't need js.
+    padding-bottom: $gutter;
+
+    &:nth-child(1n) {
+        float: left;
+        clear: none;
+        margin-right: $gutter;
+    }
+
+    width: $column_width;
+
+    &:nth-child(#{$column_count}n + 1) {
+        clear: both;
+        margin-left: 0;
+    }
+
+    &:nth-child(#{$column_count}n) {
+        margin-right: 0;
     }
 }
 
