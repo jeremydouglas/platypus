@@ -1,82 +1,108 @@
-body
-{
-    font: normal 16px/1.5 $font_regular;
-}
+%h1 {
+    font: normal 400 42px/1 $font_regular;
 
-h1
-{
-    margin-bottom: 0;
 
-    color: $grey;
-    font: normal 28px/1 $font_regular;
-
-    & + p
+    @media only screen and (min-width: 768px)
     {
-        margin-top: 5px;
+        font-size: 50px;
+    }
+
+    @media only screen and (min-width: 1000px)
+    {
+        font-size: 60px;
+    }
+
+    @media only screen and (min-width: 1280px)
+    {
+        font-size: 70px;
     }
 }
 
-h2
-{
-    margin-top: 35px;
-    margin-bottom: 0;
+%h1_small {
 
-    color: #000;
-    font: normal 22px/1 $font_regular;
+    font: 400 normal 28px/1 $font_regular;
 
-    & + p
-    {
-        margin-top: 8px;
+    @media only screen and (min-width: 380px) {
+
+        font-size: 32px;
+    }
+
+    @media only screen and (min-width: 420px) {
+
+        font-size: 38px;
+    }
+
+    @media only screen and (min-width: 600px) {
+
+        font-size: 40px;
+    }
+
+    @media only screen and (min-width: 1280px) {
+
+        font-size: 44px;
     }
 }
 
-h3
-{
-    margin-bottom: 0;
+%h2 {
 
-    color: #000;
-    font: bold 17px/1 $font_regular;
+    font: normal 400 20px/1.2 $font_regular;
 
-    & + p
+    @media only screen and (min-width: 600px) {
+
+        font-size: 26px;
+    }
+
+    @media only screen and (min-width: 768px)
     {
-        margin-top: 8px;
+        font-size: 28px;
+    }
+
+    @media only screen and (min-width: 1000px)
+    {
+        font-size: 30px;
+    }
+
+    @media only screen and (min-width: 1280px)
+    {
+        font-size: 34px;
     }
 }
 
-h4
-{
-    color: #777;
-    font: normal 18px/1.4 $font_regular;
-}
+%h3 {
+    font: normal 400 20px/1.2 $font_regular;
 
-p, li
-{
-    color: #626366;
-    font: normal 16px/1.5 $font_regular;
-}
-
-a
-{
-    color: #000;
-
-    transition: color .2s;
-
-    &:hover, &:active, &:focus
+    @media only screen and (min-width: 768px)
     {
-        color: #777;
+        font-size: 24px;
+    }
+
+    @media only screen and (min-width: 1000px)
+    {
+        font-size: 28px;
     }
 }
 
-quote, blockquote
+%p
 {
-    margin: 30px;
+    font: normal 400 16px/1.45 $font_regular;
 
-    color: #000;
-    font: normal 17px/1.5 $font_regular;
+    @media only screen and (min-width: 768px)
+    {
+        font-size: 18px;
+    }
 }
 
-.leadin
+%p_light
 {
-    color: #000;
-    font: normal 24px/1.2 $font_regular;
+    font: normal 200 15px/1.5 $font_regular;
+
+    @media only screen and (min-width: 1000px)
+    {
+        font-size: 17px;
+    }
+}
+
+.nowrap {
+
+    white-space: nowrap;
 }

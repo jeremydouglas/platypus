@@ -1,5 +1,7 @@
-vendor
 node_modules
+bower_components
+gulpfile.js
+package.json
 
 # OS or Editor folders
 .DS_Store
