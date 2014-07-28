@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "homepage": "https://github.com/jeremydouglas/base-sass",
   "authors": [
-    "Jeremy Hoover <jeremy@theburgundystudio.com>"
+    "Jeremy Hoover <jeremy@jeremyhoover.ca>"
   ],
   "license": "MIT",
   "private": true,
@@ -16,7 +16,9 @@
   ],
   "dependencies": {
     "respond": "~1.4.2",
-    "jquery": "~2.1.0",
     "meyer-reset": "*"
+  },
+  "devDependencies": {
+    "jquery-legacy": "jquery#^1"
   }
 }
