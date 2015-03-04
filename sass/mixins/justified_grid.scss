@@ -1,0 +1,27 @@
+// Two mixins below are used to evenly space a single line of items across
+//the full width of the parent.
+// Both mixins should be used in conjunction.
+@mixin justified_grid_parent {
+
+    width: 100%;
+
+    font-size: 0.1px;
+    text-align: justify;
+
+    &:after
+    {
+        content: '';
+        display: inline-block;
+        width: 100%;
+        height: .01px;
+    }
+}
+
+@mixin justified_grid_child($child_count: 3, $child_gutter: 1%) {
+
+    display: inline-block;
+    width: (100% / $child_count) - $child_gutter;
+
+    text-align: left;
+    vertical-align: top;
+}

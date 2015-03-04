@@ -1,0 +1,36 @@
+// The matrix grid evenly spaces out multiple rows of elements.
+// It pads the bottom as well to be even with the horizontal spacing.
+// CSS nth child selectors are used. May need to add some jQuery if it's not working in older browsers
+@mixin matrix_grid($column_count: 2, $gutter: 1%) {
+
+    $gutter_count: $column_count - 1;
+    $total_gutter_widths: $gutter_count * $gutter;
+    $total_column_widths: 100 - $total_gutter_widths;
+    $column_width: $total_column_widths / $column_count;
+
+    clear: none;
+    float: left;
+
+    margin-right: $gutter / 2; // help out IE8 so we don't need js.
+    padding-bottom: $gutter;
+
+    &:nth-of-type(1n) {
+
+        float: left;
+        clear: none;
+        margin-right: $gutter;
+    }
+
+    width: $column_width;
+
+    &:nth-of-type(#{$column_count}n + 1), &.child_#{$column_count}n_1 {
+
+        clear: both;
+        margin-left: 0;
+    }
+
+    &:nth-of-type(#{$column_count}n) {
+
+        margin-right: 0;
+    }
+}

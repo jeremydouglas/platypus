@@ -1,0 +1,9 @@
+// Vertical center mixin places an element vertically in the middle of it's parent.
+// Requires CSS3, offset manually for older browsers if required.
+@mixin vertical_center {
+
+    position: relative;
+    top: 50%;
+
+    transform: translateY(-50%);
+}
