@@ -18,13 +18,23 @@ var plumber = require('gulp-plumber');
 
 /*
 |--------------------------------------------------------------------------
+| Set path variables
+|--------------------------------------------------------------------------
+*/
+
+var public_path = '';
+var dev_path = '';
+var views_path = '';
+
+/*
+|--------------------------------------------------------------------------
 | Convert SASS to CSS
 |--------------------------------------------------------------------------
 */
 
 gulp.task('css', function () {
   return gulp.src([
-    'sass/main.scss'
+    dev_path + 'sass/main.scss'
     ])
   .pipe(sass({
     style: 'compressed',
@@ -34,7 +44,7 @@ gulp.task('css', function () {
     }
   }))
   .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-  .pipe(gulp.dest('css'))
+  .pipe(gulp.dest(public_path + 'css'))
   .pipe(livereload({ auto: false }))
   .pipe(notify({ message: 'Compiled CSS (<%=file.relative%>)' }));
 });
@@ -47,7 +57,7 @@ gulp.task('css', function () {
 */
 
 gulp.task('js', function() {
-  return gulp.src('js/main.js')
+  return gulp.src(dev_path + 'js/main.js')
   .pipe(plumber())
   .pipe(include())
     // .pipe(uglify())
@@ -57,11 +67,11 @@ gulp.task('js', function() {
   });
 
 gulp.task('headjs', function() {
-  return gulp.src('js/head.js')
+  return gulp.src(dev_path + 'js/head.js')
   .pipe(include())
   .pipe(uglify())
   .pipe(rename('head.min.js'))
-  .pipe(gulp.dest('js'))
+  .pipe(gulp.dest(public_path + 'js'))
   .pipe(notify({ message: 'Minified JS (<%=file.relative%>)' }));
 });
 
@@ -80,29 +90,29 @@ gulp.task('default', function () {
 
     // Watch .scss files
     gulp.watch([
-      'sass/*.scss',
-      'sass/**/*.scss'
+      dev_path + 'sass/*.scss',
+      dev_path + 'sass/**/*.scss'
       ], function (file) {
         gulp.run('css');
       })
 
     // Watch .js files
     gulp.watch([
-      'js/*.js'
+      dev_path + 'js/*.js'
       ], function (file) {
         gulp.run('js');
       })
 
     // Watch view files
     gulp.watch([
-      '*.*'
+      views_path + '*.*'
       ], function (file) {
         server.changed(file.path);
       })
 
     // Watch img files
     gulp.watch([
-      'img/*/**'
+      dev_path + 'img/*/**'
       ], function (file) {
         server.changed(file.path);
       })

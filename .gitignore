@@ -1,6 +1,5 @@
 node_modules
-vendor/bower_components
-
+vendor
 # OS or Editor folders
 .DS_Store
 .cache
