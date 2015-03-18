@@ -15,16 +15,15 @@ var sass = require('gulp-sass');
 var uglify = require('gulp-uglify');
 var plumber = require('gulp-plumber');
 
-
 /*
 |--------------------------------------------------------------------------
 | Set path variables
 |--------------------------------------------------------------------------
 */
 
-var public_path = '';
-var dev_path = '';
-var views_path = '';
+var public_path = 'public';
+var assets_path = 'assets/';
+var views_path = 'views/';
 
 /*
 |--------------------------------------------------------------------------
@@ -34,7 +33,7 @@ var views_path = '';
 
 gulp.task('css', function () {
   return gulp.src([
-    dev_path + 'sass/main.scss'
+    assets_path + 'sass/main.scss'
     ])
   .pipe(sass({
     style: 'compressed',
@@ -57,7 +56,7 @@ gulp.task('css', function () {
 */
 
 gulp.task('js', function() {
-  return gulp.src(dev_path + 'js/main.js')
+  return gulp.src(assets_path + 'js/main.js')
   .pipe(plumber())
   .pipe(include())
     // .pipe(uglify())
@@ -67,14 +66,13 @@ gulp.task('js', function() {
   });
 
 gulp.task('headjs', function() {
-  return gulp.src(dev_path + 'js/head.js')
+  return gulp.src(assets_path + 'js/head.js')
   .pipe(include())
   .pipe(uglify())
   .pipe(rename('head.min.js'))
   .pipe(gulp.dest(public_path + 'js'))
   .pipe(notify({ message: 'Minified JS (<%=file.relative%>)' }));
 });
-
 
 /*
 |--------------------------------------------------------------------------
@@ -84,36 +82,42 @@ gulp.task('headjs', function() {
 
 gulp.task('default', function () {
 
-    // Create LiveReload server
-    var server = livereload();
-    livereload.listen();
+  // Create LiveReload server
+  var server = livereload();
+  livereload.listen();
 
-    // Watch .scss files
-    gulp.watch([
-      dev_path + 'sass/*.scss',
-      dev_path + 'sass/**/*.scss'
-      ], function (file) {
-        gulp.run('css');
-      })
+  // Watch .scss files
+  gulp.watch([
+    assets_path + 'sass/*.scss',
+    assets_path + 'sass/**/*.scss'
+    ], ['css']);
 
-    // Watch .js files
-    gulp.watch([
-      dev_path + 'js/*.js'
-      ], function (file) {
-        gulp.run('js');
-      })
+  // Watch .js files
+  gulp.watch([
+    assets_path + 'js/*.js',
+    assets_path + 'js/*/*.js',
+    ], ['js']);
 
-    // Watch view files
-    gulp.watch([
-      views_path + '*.*'
-      ], function (file) {
-        server.changed(file.path);
-      })
-
-    // Watch img files
-    gulp.watch([
-      dev_path + 'img/*/**'
-      ], function (file) {
-        server.changed(file.path);
-      })
+  // Watch view files
+  gulp.watch([
+    views_path + '*.*',
+    views_path + '*/*.*'
+  ],
+  function(file) {
+    return gulp.src([
+    file.path])
+    .pipe(livereload());
   });
+
+  // Watch img files
+  gulp.watch([
+    assets_path + 'img/*',
+    assets_path + 'img/*/**'
+  ],
+  function(file) {
+    return gulp.src([
+    file.path])
+    .pipe(livereload());
+  });
+
+});
