@@ -1,6 +1,31 @@
-$global_padding: 30px;
+.grid  {
 
-*, *:after, *:before {
+	&__container {
 
-    box-sizing: border-box;
+		@include clearfix;
+
+		margin: 0 auto;
+		max-width: $site_width + $global_padding*2;
+		padding: 0 $global_padding;
+	}
+
+	&__article {
+
+		@media only screen and (min-width: 768px) {
+
+			float: left;
+
+			width: 65%;
+		}
+	}
+
+	&__aside {
+
+		@media only screen and (min-width: 768px) {
+
+			float: left;
+
+			width: 35%;
+		}
+	}
 }

@@ -48,7 +48,6 @@ gulp.task('css', function () {
   .pipe(notify({ message: 'Compiled CSS (<%=file.relative%>)' }));
 });
 
-
 /*
 |--------------------------------------------------------------------------
 | Minify JavaScript
