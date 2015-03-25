@@ -14,16 +14,36 @@
     <meta name="Copyright" content="Jeremy Douglas Hoover 2015" >
     <meta name="Author" content="http://jeremyhoover.ca" >
 
-    <link rel="stylesheet" href="css/main.css">
-    <script src="vendor/head.js"></script>
+    <link rel="stylesheet" href="/css/main.css">
+    <script src="/js/head.js"></script>
 
 </head>
 
 <body>
 
-    <!--[if lt IE 9]>
-        <div class="browsehappy"><p>You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p></div>
-        <![endif]-->
+    <!--[if lt IE 9]><div class="browsehappy"><p>You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p></div><![endif]-->
+
+    <header class="site_header">
+
+        <div class="container">
+            <a href="/" class="site_logo">
+                <img src="/img/_logo.png" alt= class="site_logo__img">
+            </a>
+
+            <nav class="main_nav">
+                <input class="main_nav__bullet" id="bullet" type="checkbox">
+                <label for="bullet" class="main_nav__trigger">Main Menu</label>
+                <ul class="main_nav__list">
+                    <li class="main_nav__item"><a href="/" class="main_nav__link">Home</a></li>
+                    <li class="main_nav__item"><a href="/about" class="main_nav__link">About</a></li>
+                    <li class="main_nav__item"><a href="/contact" class="main_nav__link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+
+    </header>
+
+    <main class="main_content">
 
         <h1>Lorem ipsum dolor sit amet, <a href="$">consectetur adipisicing</a> elit. Necessitatibus iste omnis deserunt dolorem optio! Veniam, voluptas praesentium ab ducimus iusto vel unde rem pariatur nihil quo accusantium repellat autem necessitatibus.</h1>
 
@@ -57,7 +77,26 @@
             <li>Nullam id nisl et libero tempus malesuada.</li>
         </ol>
 
-        <script src="js/main.min.js"></script>
+    </main>
 
-    </body>
-    </html>
+    <footer class="site_footer">
+
+        <section class="social_profile_links">
+            <ul class="social_profile_links__list">
+                <li class="social_profile_links__item"><a href="https://www.facebook.com/" class="social_profile_links__link">Facebook</a></li>
+                <li class="social_profile_links__item"><a href="https://twitter.com" class="social_profile_links__link">Twitter</a></li>
+            </ul>
+        </section>
+        <section class="site_credit">
+            <ul class="site_credit__list">
+                <li class="site_credit__item"><a href="/" class="site_credit__link"></a></li>
+                <li class="site_credit__item"><a href="http://compasscreative.ca" class="site_credit__link">Landscaping Website by</a></li>
+            </ul>
+        </section>
+
+    </footer>
+
+    <script src="/js/main.min.js"></script>
+
+</body>
+</html>

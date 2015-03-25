@@ -1,0 +1,18 @@
+$global_padding: 30px;
+$site_width: 1200px;
+
+*, *:after, *:before {
+	background-repeat: no-repeat;
+	box-sizing: border-box;
+}
+
+a {
+	color: inherit;
+	transition: all 0.2s;
+}
+
+body {
+	font-family: $font_regular;
+	font-style: normal;
+	font-weight: 400;
+}

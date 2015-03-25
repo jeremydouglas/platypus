@@ -14,6 +14,8 @@ var rename = require('gulp-rename');
 var sass = require('gulp-sass');
 var uglify = require('gulp-uglify');
 var plumber = require('gulp-plumber');
+var imagemin = require('gulp-imagemin');
+var pngquant = require('imagemin-pngquant');
 
 /*
 |--------------------------------------------------------------------------
@@ -21,9 +23,9 @@ var plumber = require('gulp-plumber');
 |--------------------------------------------------------------------------
 */
 
-var public_path = 'public';
-var assets_path = 'assets/';
-var views_path = 'views/';
+var public_path = '';
+var dev_path = '';
+var views_path = '';
 
 /*
 |--------------------------------------------------------------------------
@@ -33,7 +35,7 @@ var views_path = 'views/';
 
 gulp.task('css', function () {
   return gulp.src([
-    assets_path + 'sass/main.scss'
+    dev_path + 'sass/main.scss'
     ])
   .pipe(sass({
     style: 'compressed',
@@ -56,7 +58,7 @@ gulp.task('css', function () {
 */
 
 gulp.task('js', function() {
-  return gulp.src(assets_path + 'js/main.js')
+  return gulp.src(dev_path + 'js/main.js')
   .pipe(plumber())
   .pipe(include())
     // .pipe(uglify())
@@ -66,12 +68,28 @@ gulp.task('js', function() {
   });
 
 gulp.task('headjs', function() {
-  return gulp.src(assets_path + 'js/head.js')
+  return gulp.src(dev_path + 'js/head.js')
   .pipe(include())
   .pipe(uglify())
   .pipe(rename('head.min.js'))
   .pipe(gulp.dest(public_path + 'js'))
   .pipe(notify({ message: 'Minified JS (<%=file.relative%>)' }));
+});
+
+/*
+|--------------------------------------------------------------------------
+| Optimize Images
+|--------------------------------------------------------------------------
+*/
+
+gulp.task('images', function () {
+    return gulp.src(public_path + 'img/*')
+        .pipe(imagemin({
+            progressive: true,
+            svgoPlugins: [{removeViewBox: false}],
+            use: [pngquant()]
+        }))
+        .pipe(gulp.dest(public_path + 'img/'));
 });
 
 /*
@@ -88,19 +106,18 @@ gulp.task('default', function () {
 
   // Watch .scss files
   gulp.watch([
-    assets_path + 'sass/*.scss',
-    assets_path + 'sass/**/*.scss'
+    dev_path + 'sass/*.scss',
+    dev_path + 'sass/**/*.scss'
     ], ['css']);
 
   // Watch .js files
   gulp.watch([
-    assets_path + 'js/*.js',
-    assets_path + 'js/*/*.js',
+    dev_path + 'js/*.js'
     ], ['js']);
 
   // Watch view files
   gulp.watch([
-    views_path + '*.*',
+    views_path + '*.blade.php',
     views_path + '*/*.*'
   ],
   function(file) {
@@ -111,8 +128,8 @@ gulp.task('default', function () {
 
   // Watch img files
   gulp.watch([
-    assets_path + 'img/*',
-    assets_path + 'img/*/**'
+    public_path + 'img/*.*',
+    public_path + 'img/*/*.*'
   ],
   function(file) {
     return gulp.src([
