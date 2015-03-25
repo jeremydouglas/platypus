@@ -63,7 +63,7 @@ gulp.task('js', function() {
   .pipe(include())
     // .pipe(uglify())
     .pipe(rename('main.min.js'))
-    .pipe(gulp.dest('js'))
+    .pipe(gulp.dest(public_path + 'js'))
     .pipe(notify({ message: 'Minified JS (<%=file.relative%>)' }));
   });
 
@@ -72,6 +72,14 @@ gulp.task('headjs', function() {
   .pipe(include())
   .pipe(uglify())
   .pipe(rename('head.min.js'))
+  .pipe(gulp.dest(public_path + 'js'))
+  .pipe(notify({ message: 'Minified JS (<%=file.relative%>)' }));
+});
+
+gulp.task('respond', function() {
+  return gulp.src('vendor/bower_components/respond/dest/respond.min.js')
+  .pipe(uglify())
+  .pipe(rename('respond.min.js'))
   .pipe(gulp.dest(public_path + 'js'))
   .pipe(notify({ message: 'Minified JS (<%=file.relative%>)' }));
 });
@@ -113,7 +121,7 @@ gulp.task('default', function () {
   // Watch .js files
   gulp.watch([
     dev_path + 'js/*.js'
-    ], ['js']);
+    ], ['js', 'headjs']);
 
   // Watch view files
   gulp.watch([

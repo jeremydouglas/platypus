@@ -21,6 +21,12 @@
 @import "base/layout";
 
 // Blocks
+@import "blocks/browsehappy";
+@import "blocks/footer";
 @import "blocks/header";
 @import "blocks/main_nav";
-@import "blocks/footer";
+@import "blocks/site_footer";
+@import "blocks/site_header";
+@import "blocks/site_logo";
+@import "blocks/social_profile_links";
+@import "blocks/wysiwyg";
