@@ -23,9 +23,9 @@ var pngquant = require('imagemin-pngquant');
 |--------------------------------------------------------------------------
 */
 
-var public_path = '';
-var dev_path = 'dev/';
-var views_path = '';
+var public_path = '_themes/main/';
+var dev_path = '_themes/main/dev/';
+var views_path = '_themes/main/templates/';
 
 /*
 |--------------------------------------------------------------------------
@@ -34,20 +34,30 @@ var views_path = '';
 */
 
 gulp.task('css', function () {
+  var onError = function(err) {
+    notify.onError({
+      title:    "Gulp",
+      subtitle: "Failure!",
+      message:  "Error: <%= error.message %>"
+    })(err);
+
+    this.emit('end');
+  };
   return gulp.src([
-    dev_path + 'sass/main.scss'
-    ])
+                  dev_path + 'sass/main.scss'
+                  ])
+  .pipe(plumber({errorHandler: onError}))
   .pipe(sass({
     style: 'compressed',
-    errLogToConsole: true,
-    onError: function(err) {
-      return notify().write(err);
-    }
+    errLogToConsole: false
   }))
   .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
   .pipe(gulp.dest(public_path + 'css'))
   .pipe(livereload({ auto: false }))
-  .pipe(notify({ message: 'Compiled CSS (<%=file.relative%>)' }));
+  .pipe(notify({
+    title: 'Gulp',
+    subtitle: 'Success',
+    message: 'Compiled CSS (<%=file.relative%>)' }));
 });
 
 
@@ -91,13 +101,13 @@ gulp.task('respond', function() {
 */
 
 gulp.task('images', function () {
-    return gulp.src(public_path + 'img/*')
-        .pipe(imagemin({
-            progressive: true,
-            svgoPlugins: [{removeViewBox: false}],
-            use: [pngquant()]
-        }))
-        .pipe(gulp.dest(public_path + 'img/'));
+  return gulp.src(public_path + 'img/*')
+  .pipe(imagemin({
+    progressive: true,
+    svgoPlugins: [{removeViewBox: false}],
+    use: [pngquant()]
+  }))
+  .pipe(gulp.dest(public_path + 'img/'));
 });
 
 /*
@@ -106,42 +116,48 @@ gulp.task('images', function () {
 |--------------------------------------------------------------------------
 */
 
-gulp.task('default', function () {
-
+gulp.task('default', function ()
+{
   // Create LiveReload server
   var server = livereload();
   livereload.listen();
 
   // Watch .scss files
-  gulp.watch([
-    dev_path + 'sass/*.scss',
-    dev_path + 'sass/**/*.scss'
-    ], ['css']);
+  gulp.watch
+  ([
+   dev_path + 'sass/*.scss',
+   dev_path + 'sass/**/*.scss'
+   ],
+   ['css']);
 
   // Watch .js files
-  gulp.watch([
-    dev_path + 'js/*.js'
-    ], ['js', 'headjs']);
+  gulp.watch
+  ([
+   dev_path + 'js/*.js'
+   ],
+   ['js', 'headjs']);
 
   // Watch view files
-  gulp.watch([
-    views_path + '*.html'
-  ],
-  function(file) {
-    return gulp.src([
-    file.path])
-    .pipe(livereload());
-  });
+  gulp.watch
+  ([
+   views_path + '*.html'],
+   function(file)
+   {
+     return gulp.src
+     ([file.path])
+     .pipe(livereload());
+   });
 
   // Watch img files
-  gulp.watch([
-    public_path + 'img/*.*',
-    public_path + 'img/*/*.*'
-  ],
-  function(file) {
-    return gulp.src([
-    file.path])
-    .pipe(livereload());
-  });
-
+  gulp.watch
+  ([
+   public_path + 'img/*.*',
+   public_path + 'img/*/*.*'
+   ],
+   function(file)
+   {
+     return gulp.src
+     ([file.path])
+     .pipe(livereload());
+   });
 });
