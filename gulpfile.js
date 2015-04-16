@@ -24,7 +24,7 @@ var pngquant = require('imagemin-pngquant');
 */
 
 var public_path = '';
-var dev_path = '';
+var dev_path = 'dev/';
 var views_path = '';
 
 /*
@@ -39,7 +39,7 @@ gulp.task('css', function () {
     ])
   .pipe(sass({
     style: 'compressed',
-    errLogToConsole: false,
+    errLogToConsole: true,
     onError: function(err) {
       return notify().write(err);
     }
@@ -62,7 +62,7 @@ gulp.task('js', function() {
   .pipe(plumber())
   .pipe(include())
     // .pipe(uglify())
-    .pipe(rename('main.min.js'))
+    .pipe(rename('main.js'))
     .pipe(gulp.dest(public_path + 'js'))
     .pipe(notify({ message: 'Minified JS (<%=file.relative%>)' }));
   });
@@ -71,7 +71,7 @@ gulp.task('headjs', function() {
   return gulp.src(dev_path + 'js/head.js')
   .pipe(include())
   .pipe(uglify())
-  .pipe(rename('head.min.js'))
+  .pipe(rename('head.js'))
   .pipe(gulp.dest(public_path + 'js'))
   .pipe(notify({ message: 'Minified JS (<%=file.relative%>)' }));
 });
@@ -125,8 +125,7 @@ gulp.task('default', function () {
 
   // Watch view files
   gulp.watch([
-    views_path + '*.blade.php',
-    views_path + '*/*.*'
+    views_path + '*.html'
   ],
   function(file) {
     return gulp.src([
