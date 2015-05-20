@@ -16,6 +16,7 @@ var uglify = require('gulp-uglify');
 var plumber = require('gulp-plumber');
 var imagemin = require('gulp-imagemin');
 var pngquant = require('imagemin-pngquant');
+var cssGlobbing = require('gulp-css-globbing');
 
 /*
 |--------------------------------------------------------------------------
@@ -47,6 +48,9 @@ gulp.task('css', function () {
                   dev_path + 'sass/main.scss'
                   ])
   .pipe(plumber({errorHandler: onError}))
+  .pipe(globbing({
+    extensions: ['.scss']
+  }))
   .pipe(sass({
     style: 'compressed',
     errLogToConsole: false

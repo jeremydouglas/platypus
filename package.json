@@ -4,6 +4,7 @@
     "gulp": "latest",
     "gulp-autoprefixer": "latest",
     "gulp-concat": "latest",
+    "gulp-css-globbing": "^0.1.8",
     "gulp-imagemin": "^2.2.1",
     "gulp-include": "latest",
     "gulp-livereload": "latest",
