@@ -1,18 +1,18 @@
 {
   "private": true,
   "devDependencies": {
-    "gulp": "latest",
-    "gulp-autoprefixer": "latest",
-    "gulp-concat": "latest",
-    "gulp-css-globbing": "^0.1.8",
-    "gulp-imagemin": "^2.2.1",
-    "gulp-include": "latest",
-    "gulp-livereload": "latest",
-    "gulp-notify": "latest",
-    "gulp-plumber": "latest",
-    "gulp-rename": "latest",
-    "gulp-sass": "latest",
-    "gulp-uglify": "latest",
-    "imagemin-pngquant": "^4.0.0"
+    "gulp": "*",
+    "gulp-autoprefixer": "*",
+    "gulp-concat": "*",
+    "gulp-css-globbing": "*",
+    "gulp-imagemin": "*",
+    "gulp-include": "*",
+    "gulp-livereload": "*",
+    "gulp-notify": "*",
+    "gulp-plumber": "*",
+    "gulp-rename": "*",
+    "gulp-sass": "*",
+    "gulp-uglify": "*",
+    "imagemin-pngquant": "*"
   }
 }
