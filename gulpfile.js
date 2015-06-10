@@ -40,12 +40,11 @@ gulp.task('css', function () {
       subtitle: "Failure!",
       message:  "Error: <%= error.message %>"
     })(err);
-
     this.emit('end');
   };
   return gulp.src([
-                  dev_path + 'sass/main.scss'
-                  ])
+    dev_path + 'sass/main.scss'
+  ])
   .pipe(plumber({errorHandler: onError}))
   .pipe(globbing({
     extensions: ['.scss']
@@ -63,7 +62,6 @@ gulp.task('css', function () {
     message: 'Compiled CSS (<%=file.relative%>)' }));
 });
 
-
 /*
 |--------------------------------------------------------------------------
 | Minify JavaScript
@@ -74,10 +72,10 @@ gulp.task('js', function() {
   return gulp.src(dev_path + 'js/main.js')
   .pipe(plumber())
   .pipe(include())
-    // .pipe(uglify())
-    .pipe(rename('main.js'))
-    .pipe(gulp.dest(public_path + 'js'))
-    .pipe(notify({ message: 'Minified JS (<%=file.relative%>)' }));
+  .pipe(uglify())
+  .pipe(rename('main.js'))
+  .pipe(gulp.dest(public_path + 'js'))
+  .pipe(notify({ message: 'Minified JS (<%=file.relative%>)' }));
   });
 
 gulp.task('headjs', function() {
