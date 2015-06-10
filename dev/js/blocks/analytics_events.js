@@ -7,7 +7,7 @@
 
     $(window).scroll(function() {
        if($(window).scrollTop() + $(window).height() == $(document).height()) {
-           ga('send', 'event', 'window', 'scroll', 'bottom');
+           ga('send', 'event', 'scroll-to-bottom', 'Page: 'window.location.href, 'Page height: '$(document).height());
        }
     });
   });

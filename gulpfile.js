@@ -13,7 +13,6 @@ var plumber = require('gulp-plumber');
 var rename = require('gulp-rename');
 var sass = require('gulp-sass');
 var uglify = require('gulp-uglify');
-var plumber = require('gulp-plumber');
 var imagemin = require('gulp-imagemin');
 var pngquant = require('imagemin-pngquant');
 var globbing = require('gulp-css-globbing');
