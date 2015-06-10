@@ -76,7 +76,7 @@ gulp.task('js', function() {
   .pipe(rename('main.js'))
   .pipe(gulp.dest(public_path + 'js'))
   .pipe(notify({ message: 'Minified JS (<%=file.relative%>)' }));
-  });
+});
 
 gulp.task('headjs', function() {
   return gulp.src(dev_path + 'js/head.js')
