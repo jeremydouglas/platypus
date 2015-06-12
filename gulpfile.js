@@ -13,9 +13,13 @@ var plumber = require('gulp-plumber');
 var rename = require('gulp-rename');
 var sass = require('gulp-sass');
 var uglify = require('gulp-uglify');
-var imagemin = require('gulp-imagemin');
-var pngquant = require('imagemin-pngquant');
 var globbing = require('gulp-css-globbing');
+
+// Image compression if you want it
+// var imagemin = require('gulp-imagemin');
+// var pngquant = require('imagemin-pngquant');
+// var imagemin = require('gulp-tinypng');
+
 
 /*
 |--------------------------------------------------------------------------
@@ -109,6 +113,12 @@ gulp.task('images', function () {
     use: [pngquant()]
   }))
   .pipe(gulp.dest(public_path + 'img/'));
+});
+
+gulp.task('tinypng', function () {
+    gulp.src(public_path + 'img/*.png')
+        .pipe(tingpng('UMKBV8s6QuwMtQudUF1BAeejyAQEip4N'))
+        .pipe(gulp.dest(public_path + 'img/'));
 });
 
 /*
