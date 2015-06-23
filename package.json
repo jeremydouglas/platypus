@@ -1,23 +1,25 @@
-// To install use npm update --save-dev. This will lock you into a version number.
-
 {
+  "_comment": "To install use npm update --save-dev. This will lock you into a version number.",
   "private": true,
   "devDependencies": {
     "gulp": "*",
-    "gulp-autoprefixer": "*"
-    , "gulp-concat": "*"
-    , "gulp-css-globbing": "*"
-    , "gulp-imagemin": "*"
-    , "gulp-include": "*"
-    , "gulp-livereload": "*"
-    , "gulp-notify": "*"
-    , "gulp-plumber": "*"
-    , "gulp-rename": "*"
-    , "gulp-sass": "*"
-    , "gulp-uglify": "*"
-    // Image compression if you want it
-    // , "gulp-imagemin": "*"
-    // , "imagemin-pngquant": "*"
-    // , "gulp-tinypng": "*"
+    "gulp-autoprefixer": "*",
+    "gulp-concat": "*",
+    "gulp-css-globbing": "*",
+    "gulp-imagemin": "*",
+    "gulp-include": "*",
+    "gulp-livereload": "*",
+    "gulp-notify": "*",
+    "gulp-plumber": "*",
+    "gulp-rename": "*",
+    "gulp-sass": "*",
+    "gulp-tinypng": "*",
+    "gulp-uglify": "*",
+    "imagemin-pngquant": "*"
+  },
+  "optional": {
+    "gulp-tinypng": "*",
+    "gulp-uglify": "*",
+    "imagemin-pngquant": "*"
   }
 }
