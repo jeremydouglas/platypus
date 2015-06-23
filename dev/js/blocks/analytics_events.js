@@ -8,15 +8,14 @@ $(function() {
         ga('send', 'event', 'phone', 'click', this_rel);
     });
 
+    var scrolled_once = 0;
+
     $(window).scroll(function() {
-<<<<<<< HEAD
        if($(window).scrollTop() + $(window).height() == $(document).height()) {
-           ga('send', 'event', 'scroll-to-bottom', 'Page: 'window.location.href, 'Page height: '$(document).height());
+           if (scrolled_once == 0) {
+               ga('send', 'event', 'scroll-to-bottom', 'Page: 'window.location.href, 'Page height: '$(document).height());
+           }
+           scrolled_once = 1;
        }
-=======
-        if($(window).scrollTop() + $(window).height() == $(document).height()) {
-            ga('send', 'event', 'window', 'scroll', 'bottom');
-        }
->>>>>>> 26ca116aaa972129181a46c93612a61950f6eb63
     });
 });
