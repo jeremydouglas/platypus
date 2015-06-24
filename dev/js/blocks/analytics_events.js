@@ -1,11 +1,19 @@
 $(function() {
 
     $('a[href^="tel"]').on('click', function() {
-        var this_rel = $(this).attr('rel');
+        var this_location = $(this).data('location');
         if (typeof attr !== typeof undefined && attr !== false) {
-            this_rel = 'general';
+            this_location = 'general';
         }
-        ga('send', 'event', 'phone', 'click', this_rel);
+        ga('send', 'event', 'phone', 'click', this_location);
+    });
+
+    $('a[href^="mailto"]').on('click', function() {
+        var this_location = $(this).data('location');
+        if (typeof attr !== typeof undefined && attr !== false) {
+            this_location = 'general';
+        }
+        ga('send', 'event', 'phone', 'click', this_location);
     });
 
     var scrolled_once = 0;
