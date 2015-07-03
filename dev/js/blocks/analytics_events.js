@@ -21,7 +21,7 @@ $(function() {
     $(window).scroll(function() {
        if($(window).scrollTop() + $(window).height() == $(document).height()) {
            if (scrolled_once == 0) {
-               ga('send', 'event', 'scroll-to-bottom', 'Page: 'window.location.href, 'Page height: '$(document).height());
+               ga('send', 'event', 'scroll-to-bottom', 'Page: ' + window.location.href, 'Page height: ' + $(document).height());
            }
            scrolled_once = 1;
        }
