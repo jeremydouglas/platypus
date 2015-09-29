@@ -1,31 +1,52 @@
 .grid  {
 
-	&__container {
+  &__container {
 
-		@include clearfix;
+    @include clearfix;
 
-		margin: 0 auto;
-		max-width: $site_width + $global_padding*2;
-		padding: 0 $global_padding;
-	}
+    margin: 0 auto;
+    max-width: $site_width + $global_padding*2;
+    padding: 0 $global_padding / 2;
 
-	&__article {
+    @media only screen and (min-width: 1000px) {
 
-		@media only screen and (min-width: 768px) {
+      padding: 0 $global_padding;
+    }
 
-			float: left;
+    @media only screen and (min-width: 768px) and (max-width: 999px) {
 
-			width: 65%;
-		}
-	}
+      max-width: 768px;
+    }
 
-	&__aside {
+    @media only screen and (min-width: 1000px) and (max-width: $site_width - 1px) {
 
-		@media only screen and (min-width: 768px) {
+      max-width: 1000px;
+    }
 
-			float: left;
+    &--relative {
 
-			width: 35%;
-		}
-	}
+      position: relative;
+    }
+
+  }
+
+  &__article {
+
+    @media only screen and (min-width: 768px) {
+
+      float: left;
+
+      width: 65%;
+    }
+  }
+
+  &__aside {
+
+    @media only screen and (min-width: 768px) {
+
+      float: left;
+
+      width: 35%;
+    }
+  }
 }

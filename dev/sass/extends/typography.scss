@@ -1,6 +1,6 @@
 %h1 {
-    font: normal 400 42px/1 $font_regular;
 
+    font: normal 400 30px/1 $font_regular;
 
     @media only screen and (min-width: 768px)
     {
@@ -11,30 +11,15 @@
     {
         font-size: 60px;
     }
-
-    @media only screen and (min-width: 1280px)
-    {
-        font-size: 70px;
-    }
 }
 
 %h1_small {
 
-    font: 400 normal 28px/1 $font_regular;
+    font: normal normal 28px/1 $font_regular;
 
     @media only screen and (min-width: 380px) {
 
         font-size: 32px;
-    }
-
-    @media only screen and (min-width: 420px) {
-
-        font-size: 38px;
-    }
-
-    @media only screen and (min-width: 600px) {
-
-        font-size: 40px;
     }
 
     @media only screen and (min-width: 1280px) {
@@ -45,61 +30,78 @@
 
 %h2 {
 
-    font: normal 400 20px/1.2 $font_regular;
+    margin-bottom: .18em;
 
-    @media only screen and (min-width: 600px) {
-
-        font-size: 26px;
-    }
+    font: normal normal 20px/1.2 $font_regular;
 
     @media only screen and (min-width: 768px)
     {
-        font-size: 28px;
-    }
-
-    @media only screen and (min-width: 1000px)
-    {
-        font-size: 30px;
-    }
-
-    @media only screen and (min-width: 1280px)
-    {
-        font-size: 34px;
+        font-size: 26px;
     }
 }
 
 %h3 {
-    font: normal 400 20px/1.2 $font_regular;
+
+    font: normal normal 16px/1.1 $font_regular;
 
     @media only screen and (min-width: 768px)
+    {
+        font-size: 20px;
+    }
+}
+
+
+%p {
+    padding-bottom: .8em;
+
+    font: normal 400 14px/1.5 $font_regular;
+
+    @media only screen and (min-width: 768px)
+    {
+        font-size: 16px;
+    }
+}
+
+%p_light {
+
+    font: normal 200 20px/1.3 $font_regular;
+
+    @media only screen and (min-width: 1000px)
     {
         font-size: 24px;
-    }
-
-    @media only screen and (min-width: 1000px)
-    {
-        font-size: 28px;
+        line-height: 1.375;
     }
 }
 
-%p
-{
-    font: normal 400 16px/1.45 $font_regular;
+%ul  {
 
-    @media only screen and (min-width: 768px)
-    {
-        font-size: 18px;
-    }
+    margin: 20px;
+
+    list-style: disc;
 }
 
-%p_light
-{
-    font: normal 200 15px/1.5 $font_regular;
+%ol  {
 
-    @media only screen and (min-width: 1000px)
-    {
-        font-size: 17px;
-    }
+    list-style: digit;
+}
+
+%li {
+
+    padding-bottom: .8em;
+
+    font-size: 14px;
+    line-height: 1.5;
+    list-style: inherit;
+}
+
+%strong {
+
+    font-weight: 500;
+}
+
+%em {
+
+    font-style: italic;
 }
 
 .nowrap {

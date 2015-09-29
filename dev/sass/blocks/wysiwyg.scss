@@ -34,4 +34,48 @@
 
 		@extend %p;
 	}
+
+	.leadin {
+
+		@extend %p_light;
+	}
+
+	ul {
+
+		@extend %ul;
+	}
+
+	ol {
+
+		@extend %ol;
+	}
+
+	li {
+
+		@extend %li;
+	}
+
+	strong  {
+
+		@extend %strong;
+	}
+
+	em {
+
+		@extend %em;
+	}
+
+	a {
+
+		&:hover, &:focus {
+
+			outline: 0;
+			color: $color_yellow;
+		}
+	}
+
+	small {
+
+		font-size: 60%;
+	}
 }

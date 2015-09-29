@@ -6,15 +6,10 @@
 @import "base/fonts";
 @import "base/defaults";
 @import "base/grid";
+@import "blocks/icons";
 
 // Mixins
-@import "mixins/antialias";
-@import "mixins/clearfix";
-@import "mixins/font_face";
-@import "mixins/image_wrap";
-@import "mixins/justified_grid";
-@import "mixins/matrix_grid";
-@import "mixins/vertical_center";
+@import "mixins/*";
 
 // Extends
 @import "extends/buttons";
