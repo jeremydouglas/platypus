@@ -15,10 +15,10 @@ var sass = require('gulp-sass');
 var uglify = require('gulp-uglify');
 var globbing = require('gulp-css-globbing');
 
-// Image compression if you want it
-// var imagemin = require('gulp-imagemin');
-// var pngquant = require('imagemin-pngquant');
-// var imagemin = require('gulp-tinypng');
+// Image compression
+var imagemin = require('gulp-imagemin');
+var pngquant = require('imagemin-pngquant');
+var tinypng = require('gulp-tinypng');
 
 
 /*
@@ -117,7 +117,7 @@ gulp.task('images', function () {
 
 gulp.task('tinypng', function () {
     gulp.src(public_path + 'img/*.png')
-        .pipe(tingpng('UMKBV8s6QuwMtQudUF1BAeejyAQEip4N'))
+        .pipe(tinypng('UMKBV8s6QuwMtQudUF1BAeejyAQEip4N'))
         .pipe(gulp.dest(public_path + 'img/'));
 });
 
