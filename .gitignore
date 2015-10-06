@@ -8,3 +8,4 @@ vendor
 nbproject
 Thumbs.db
 .sass-cache
+.gulp
