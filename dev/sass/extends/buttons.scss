@@ -1,0 +1,117 @@
+%button {
+
+  display: inline-block;
+  padding: .8em 1em;
+
+  cursor: pointer;
+  text-decoration: none;
+}
+
+%button--very_small {
+
+  @extend %button;
+
+  background-color: #3f3f3f;
+  color: #fff;
+  font-size: 12px;
+  text-transform: uppercase;
+
+  &:hover, &:focus {
+
+    outline: 0;
+    background-color: lighten(#3f3f3f, 10);
+  }
+}
+
+%button--small {
+
+  @extend %button;
+
+  background-color: #3f3f3f;
+  color: #fff;
+  font-size: 14px;
+  text-transform: uppercase;
+
+  &:hover, &:focus {
+
+    outline: 0;
+    background-color: lighten(#3f3f3f, 10);
+  }
+
+  &:after {
+
+    position: relative;
+
+    content: '\203A';
+    display: inline-block;
+    margin-left: .35em;
+
+    font-size: 1.2em;
+    line-height: 1;
+  }
+
+  &:hover:after, &:focus:after {
+
+    left: 1px;
+
+    transform: scale(1.15);
+  }
+}
+
+%button--large {
+
+  @extend %button;
+
+  background-color: $color_yellow;
+  color: #fff;
+  font-size: 16px;
+
+  &:hover, &:focus {
+
+    outline: 0;
+    background-color: lighten($color_yellow, 10);
+  }
+
+  @media only screen and (min-width: 1000px) {
+
+    font-size: 20px;
+  }
+}
+
+%button--hollow {
+
+  @extend %button;
+
+  border: 1px solid $color_grey;
+  color: $color_grey_light;
+  font-size: 14px;
+  letter-spacing: .5px;
+  line-height: 1.5;
+  text-transform: uppercase;
+
+  &:hover, &:focus {
+
+    outline: 0;
+    border: 1px solid $color_grey_light;
+    color: #fff;
+  }
+
+  &:after {
+
+    position: relative;
+
+    content: '\203A';
+    display: inline-block;
+    margin-left: .4em;
+    line-height: 1;
+
+    font-size: 1.2em;
+  }
+
+  &:hover:after, &:focus:after {
+
+    left: 1px;
+
+    transform: scale(1.15);
+  }
+}

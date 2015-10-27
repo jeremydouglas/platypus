@@ -1,21 +1,25 @@
 // Vendor
 @import "../vendor/bower_components/meyer-reset/stylesheets/meyer-reset";
 
+// Base
+@import "base/colors";
+@import "base/fonts";
+@import "base/defaults";
+@import "base/grid";
+@import "blocks/icons";
+
 // Mixins
-@import "mixins/antialias";
-@import "mixins/clearfix";
-@import "mixins/font_face";
-@import "mixins/image_wrap";
-@import "mixins/justified_grid";
-@import "mixins/matrix_grid";
-@import "mixins/vertical_center";
+@import "mixins/*";
 
 // Extends
 @import "extends/buttons";
 @import "extends/typography";
 
+<<<<<<< HEAD
 // Base
 @import "base/*";
 
+=======
+>>>>>>> f6c2124325a4debcfd5f2882c445e2a296b4daf7
 // Blocks
 @import "blocks/*";
