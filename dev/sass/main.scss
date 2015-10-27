@@ -15,10 +15,7 @@
 @import "extends/typography";
 
 // Base
-@import "base/colours";
-@import "base/mixins";
-@import "base/fonts";
-@import "base/layout";
+@import "base/*";
 
 // Blocks
 @import "blocks/*";
