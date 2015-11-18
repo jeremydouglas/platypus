@@ -27,9 +27,9 @@ var tinypng = require('gulp-tinypng');
 |--------------------------------------------------------------------------
 */
 
-var public_path = '_themes/main/';
-var dev_path = '_themes/main/dev/';
-var views_path = '_themes/main/templates/';
+var public_path = 'public/assets/';
+var dev_path = 'public/assets/src/';
+var views_path = 'public/assets/**/*.html';
 
 /*
 |--------------------------------------------------------------------------
