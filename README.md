@@ -9,9 +9,9 @@ This repository is a starting point for frontend development.
   ├── base/
   │   ├── colors.scss
   │   ├── fonts.scss
-  │   ├── defaults.less
-  │   ├── icons.less
-  │   └── grid.less
+  │   ├── defaults.scss
+  │   ├── icons.scss
+  │   └── grid.scss
   ├── blocks/
   │   ├── browsehappy.scss
   │   ├── site_header.scss
