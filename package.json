@@ -9,6 +9,7 @@
     "gulp-imagemin": "*",
     "gulp-include": "*",
     "gulp-livereload": "*",
+    "gulp-modernizr": "*",
     "gulp-notify": "*",
     "gulp-plumber": "*",
     "gulp-rename": "*",
@@ -18,6 +19,7 @@
     "imagemin-pngquant": "*",
     "jquery": "*",
     "magnific-popup": "*",
-    "node-reset-scss": "*"
+    "node-reset-scss": "*",
+    "picturefill": "^3.0.1"
   }
 }

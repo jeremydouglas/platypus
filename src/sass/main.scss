@@ -1,0 +1,22 @@
+// Vendor
+@import "../../node_modules/node-reset-scss/scss/reset";
+@import "../../node_modules/magnific-popup/src/css/settings";
+@import "../../node_modules/magnific-popup/src/css/main";
+
+// Mixins
+@import "mixins/*";
+
+// Base
+@import "base/colors";
+@import "base/fonts";
+@import "base/defaults";
+@import "base/grid";
+@import "base/icons";
+
+
+// Extends
+@import "extends/buttons";
+@import "extends/typography";
+
+// Blocks
+@import "blocks/*";

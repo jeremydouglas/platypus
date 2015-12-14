@@ -12,23 +12,22 @@ insert_final_newline = true
 # Set default charset
 [*.{js}]
 charset = utf-8
+indent_size = 4
 
 # 4 space indentation
 [*.php]
 indent_style = space
 indent_size = 4
 
-# Indentation override for all JS under lib directory
+[*.scss]
+indent_style = space
+indent_size = 4
+
 [*.html]
 indent_style = space
-indent_size = 2
-
-# Indentation override for all JS under lib directory
-[*.js]
-indent_style = space
-indent_size = 2
+indent_size = 4
 
 # Matches the exact files either package.json *.yml
-[{package.json,*.yml}]
+[{package.json,*.yml, bower.json}]
 indent_style = space
 indent_size = 2

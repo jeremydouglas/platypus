@@ -14,6 +14,7 @@ var rename = require('gulp-rename');
 var sass = require('gulp-sass');
 var uglify = require('gulp-uglify');
 var globbing = require('gulp-css-globbing');
+var modernizr = require('gulp-modernizr');
 
 // Image compression
 var imagemin = require('gulp-imagemin');
@@ -27,9 +28,9 @@ var tinypng = require('gulp-tinypng');
 |--------------------------------------------------------------------------
 */
 
-var public_path = '_themes/main/';
-var dev_path = '_themes/main/dev/';
-var views_path = '_themes/main/templates/';
+var public_path = 'public/assets/';
+var dev_path = 'src/';
+var views_path = 'public/assets/**/*.html';
 
 /*
 |--------------------------------------------------------------------------
@@ -80,6 +81,12 @@ gulp.task('js', function() {
   .pipe(rename('main.js'))
   .pipe(gulp.dest(public_path + 'js'))
   .pipe(notify({ message: 'Minified JS (<%=file.relative%>)' }));
+});
+
+gulp.task('modernizr', function() {
+  gulp.src(dev_path + 'sass/*/*.scss')
+    .pipe(modernizr())
+    .pipe(gulp.dest(public_path + 'assets/js'))
 });
 
 gulp.task('headjs', function() {
