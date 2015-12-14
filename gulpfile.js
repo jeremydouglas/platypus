@@ -86,7 +86,7 @@ gulp.task('js', function() {
 gulp.task('modernizr', function() {
   gulp.src(dev_path + 'sass/*/*.scss')
     .pipe(modernizr())
-    .pipe(gulp.dest(public_path + 'assets/js'))
+    .pipe(gulp.dest(dev_path + 'js'))
 });
 
 gulp.task('headjs', function() {
