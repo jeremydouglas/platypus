@@ -98,14 +98,6 @@ gulp.task('headjs', function() {
   .pipe(notify({ message: 'Minified JS (<%=file.relative%>)' }));
 });
 
-gulp.task('respond', function() {
-  return gulp.src('respond.min.js')
-  .pipe(uglify())
-  .pipe(rename('respond.min.js'))
-  .pipe(gulp.dest(public_path + 'js'))
-  .pipe(notify({ message: 'Minified JS (<%=file.relative%>)' }));
-});
-
 /*
 |--------------------------------------------------------------------------
 | Optimize Images
