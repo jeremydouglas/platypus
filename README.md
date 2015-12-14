@@ -34,14 +34,10 @@ This repository is a starting point for frontend development.
       ├── justified_grid.scss
       └── matrix_grid.scss
 /js/
-  ├── main.js
+  ├── end.js
   ├── head.js
-  └── blocks/
-      └── analytics_events.js
-/vendor/bower_components/
-  ├── jquery-legacy
-  ├── meyer-reset
-  └── respond
+  └── end_blocks/
+  └── head_blocks/
 ```
 
 #### Gulpfile.js
@@ -58,7 +54,6 @@ When you’re done, install the rest of the theme's dependencies:
 
 ```
 $ npm install
-$ bower install
 ```
 
 From here on out, simply run `gulp` from your terminal and you're good to go!
