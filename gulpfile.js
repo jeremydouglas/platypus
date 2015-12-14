@@ -1,5 +1,15 @@
 /*
 |--------------------------------------------------------------------------
+| Set path variables
+|--------------------------------------------------------------------------
+*/
+
+var public_path = 'public/assets/';
+var dev_path = 'src/';
+var views_path = 'public/assets/**/*.html';
+
+/*
+|--------------------------------------------------------------------------
 | Include dependencies
 |--------------------------------------------------------------------------
 */
@@ -20,17 +30,6 @@ var modernizr = require('gulp-modernizr');
 var imagemin = require('gulp-imagemin');
 var pngquant = require('imagemin-pngquant');
 var tinypng = require('gulp-tinypng');
-
-
-/*
-|--------------------------------------------------------------------------
-| Set path variables
-|--------------------------------------------------------------------------
-*/
-
-var public_path = 'public/assets/';
-var dev_path = 'src/';
-var views_path = 'public/assets/**/*.html';
 
 /*
 |--------------------------------------------------------------------------
