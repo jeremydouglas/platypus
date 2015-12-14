@@ -15,11 +15,9 @@
     "gulp-sass": "*",
     "gulp-tinypng": "*",
     "gulp-uglify": "*",
-    "imagemin-pngquant": "*"
-  },
-  "optional": {
-    "gulp-tinypng": "*",
-    "gulp-uglify": "*",
-    "imagemin-pngquant": "*"
+    "imagemin-pngquant": "*",
+    "jquery": "*",
+    "magnific-popup": "*",
+    "node-reset-scss": "*"
   }
 }
