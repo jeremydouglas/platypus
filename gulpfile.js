@@ -74,11 +74,11 @@ gulp.task('css', function () {
 */
 
 gulp.task('js', function() {
-  return gulp.src(dev_path + 'js/main.js')
+  return gulp.src(dev_path + 'js/end.js')
   .pipe(plumber())
   .pipe(include())
   .pipe(uglify())
-  .pipe(rename('main.js'))
+  .pipe(rename('end.main.js'))
   .pipe(gulp.dest(public_path + 'js'))
   .pipe(notify({ message: 'Minified JS (<%=file.relative%>)' }));
 });
@@ -93,13 +93,13 @@ gulp.task('headjs', function() {
   return gulp.src(dev_path + 'js/head.js')
   .pipe(include())
   .pipe(uglify())
-  .pipe(rename('head.js'))
+  .pipe(rename('head.min.js'))
   .pipe(gulp.dest(public_path + 'js'))
   .pipe(notify({ message: 'Minified JS (<%=file.relative%>)' }));
 });
 
 gulp.task('respond', function() {
-  return gulp.src('vendor/bower_components/respond/dest/respond.min.js')
+  return gulp.src('respond.min.js')
   .pipe(uglify())
   .pipe(rename('respond.min.js'))
   .pipe(gulp.dest(public_path + 'js'))
@@ -148,12 +148,21 @@ gulp.task('default', function ()
    ],
    ['css']);
 
-  // Watch .js files
+  // Watch main.js files
   gulp.watch
   ([
-   dev_path + 'js/*.js'
+   dev_path + 'js/end_blocks/*.js',
+   dev_path + 'js/end.js'
    ],
-   ['js', 'headjs']);
+   ['js']);
+
+  // Watch head.js files
+  gulp.watch
+  ([
+   dev_path + 'js/head.js',
+   dev_path + 'js/head_blocks/*.js'
+   ],
+   ['headjs']);
 
   // Watch view files
   gulp.watch
