@@ -3,7 +3,7 @@
 This repository is a starting point for frontend development. It’s a compilation of pieces that we’ve adapted from different frameworks. The intention is to be very minimal, but also included the base set of files that are typically used on a project.
 
 ## Key concepts
-We’re using the [BEM](https://en.bem.info) naming conventions. For a complete overview on how we work, see our [front-end dev standards](http://compasscreative.ca/front-end-development-standards).
+We’re using the [BEM](https://en.bem.info) naming conventions. For a complete overview on how we work, see our [front-end dev standards](https://github.com/compasscreative/front-end-web-dev-standards/blob/master/README.md).
 
 ### Settings
 The /src/sass/settings directory contains the base settings for the app. Fonts and icons are also set here.
