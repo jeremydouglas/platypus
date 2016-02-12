@@ -1,0 +1,22 @@
+.site-credit {
+
+    padding-bottom: 30px;
+
+    &__list {
+
+        @extend %list-clean;
+    }
+
+    &__item {
+
+        @extend %list-clean;
+
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+    &__link {
+
+        font-size: 10px;
+    }
+}

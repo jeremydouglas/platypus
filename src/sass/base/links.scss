@@ -1,0 +1,19 @@
+/*
+|--------------------------------------------------------------------------
+| Links
+|
+| Basic link class that can be used across the site
+|--------------------------------------------------------------------------
+*/
+
+a {
+  color: inherit;
+  transition: color 0.2s, background 0.2s, opacity 0.2s, border 0.2s;
+}
+
+.link {
+
+    &:after {
+        content: '\203A';
+    }
+}

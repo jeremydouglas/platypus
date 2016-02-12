@@ -14,12 +14,13 @@
     "gulp-plumber": "*",
     "gulp-rename": "*",
     "gulp-sass": "*",
+    "gulp-sourcemaps": "",
     "gulp-tinypng": "*",
     "gulp-uglify": "*",
     "imagemin-pngquant": "*",
     "jquery": "*",
     "magnific-popup": "*",
-    "node-reset-scss": "*",
-    "picturefill": "^3.0.1"
+    "picturefill": "",
+    "sanitize.css": ""
   }
 }

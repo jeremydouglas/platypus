@@ -1,52 +1,64 @@
+/*
+|--------------------------------------------------------------------------
+| Grid
+|
+| This is a very basic grid structure, which is often sufficient.
+| Feel free to add columns, or even replace this with a grid system from
+| another system if that suits you better.
+|
+| See the block-grid mixin as well.
+|--------------------------------------------------------------------------
+*/
+
 .grid  {
 
-  &__container {
+    &__container {
 
-    @include clearfix;
+        @include clearfix;
 
-    margin: 0 auto;
-    max-width: $site_width + $global_padding*2;
-    padding: 0 $global_padding / 2;
+        margin: 0 auto;
+        max-width: $site-width + $global-padding*2;
+        padding: 0 $global-padding / 2;
 
-    @media only screen and (min-width: 1000px) {
+        @media only screen and (min-width: 1000px) {
 
-      padding: 0 $global_padding;
+            padding: 0 $global-padding;
+        }
+
+        @media only screen and (min-width: 768px) and (max-width: 999px) {
+
+            max-width: 768px;
+        }
+
+        @media only screen and (min-width: 1000px) and (max-width: $site-width - 1px) {
+
+            max-width: 1000px;
+        }
+
+        &--relative {
+
+            position: relative;
+        }
+
     }
 
-    @media only screen and (min-width: 768px) and (max-width: 999px) {
+    &__article {
 
-      max-width: 768px;
+        @media only screen and (min-width: 768px) {
+
+            float: left;
+
+            width: 65%;
+        }
     }
 
-    @media only screen and (min-width: 1000px) and (max-width: $site_width - 1px) {
+    &__aside {
 
-      max-width: 1000px;
+        @media only screen and (min-width: 768px) {
+
+            float: left;
+
+            width: 35%;
+        }
     }
-
-    &--relative {
-
-      position: relative;
-    }
-
-  }
-
-  &__article {
-
-    @media only screen and (min-width: 768px) {
-
-      float: left;
-
-      width: 65%;
-    }
-  }
-
-  &__aside {
-
-    @media only screen and (min-width: 768px) {
-
-      float: left;
-
-      width: 35%;
-    }
-  }
 }

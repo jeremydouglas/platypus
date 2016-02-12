@@ -4,9 +4,9 @@
 |--------------------------------------------------------------------------
 */
 
-var public_path = 'public/assets/';
+var public_assets_path = 'public/assets/';
 var dev_path = 'src/';
-var views_path = 'public/assets/**/*.html';
+var templates_path = 'templates/';
 
 /*
 |--------------------------------------------------------------------------
@@ -14,17 +14,18 @@ var views_path = 'public/assets/**/*.html';
 |--------------------------------------------------------------------------
 */
 
-var gulp = require('gulp')
 var autoprefixer = require('gulp-autoprefixer');
+var globbing = require('gulp-css-globbing');
+var gulp = require('gulp')
 var include = require('gulp-include');
 var livereload = require('gulp-livereload');
+var modernizr = require('gulp-modernizr');
 var notify = require('gulp-notify');
 var plumber = require('gulp-plumber');
 var rename = require('gulp-rename');
 var sass = require('gulp-sass');
+var sourcemaps = require('gulp-sourcemaps');
 var uglify = require('gulp-uglify');
-var globbing = require('gulp-css-globbing');
-var modernizr = require('gulp-modernizr');
 
 // Image compression
 var imagemin = require('gulp-imagemin');
@@ -53,12 +54,14 @@ gulp.task('css', function () {
   .pipe(globbing({
     extensions: ['.scss']
   }))
+  .pipe(sourcemaps.init())
   .pipe(sass({
     outputStyle: 'compressed',
     errLogToConsole: false
   }))
-  .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-  .pipe(gulp.dest(public_path + 'css'))
+  .pipe(autoprefixer())
+  .pipe(sourcemaps.write("./"))
+  .pipe(gulp.dest(public_assets_path + 'css'))
   .pipe(livereload({ auto: false }))
   .pipe(notify({
     title: 'Gulp',
@@ -78,7 +81,7 @@ gulp.task('js', function() {
   .pipe(include())
   .pipe(uglify())
   .pipe(rename('end.min.js'))
-  .pipe(gulp.dest(public_path + 'js'))
+  .pipe(gulp.dest(public_assets_path + 'js'))
   .pipe(notify({ message: 'Minified JS (<%=file.relative%>)' }));
 });
 
@@ -93,7 +96,7 @@ gulp.task('headjs', function() {
   .pipe(include())
   .pipe(uglify())
   .pipe(rename('head.min.js'))
-  .pipe(gulp.dest(public_path + 'js'))
+  .pipe(gulp.dest(public_assets_path + 'js'))
   .pipe(notify({ message: 'Minified JS (<%=file.relative%>)' }));
 });
 
@@ -104,19 +107,19 @@ gulp.task('headjs', function() {
 */
 
 gulp.task('images', function () {
-  return gulp.src(public_path + 'img/*')
+  return gulp.src(public_assets_path + 'img/*')
   .pipe(imagemin({
     progressive: true,
     svgoPlugins: [{removeViewBox: false}],
     use: [pngquant()]
   }))
-  .pipe(gulp.dest(public_path + 'img/'));
+  .pipe(gulp.dest(public_assets_path + 'img/'));
 });
 
 gulp.task('tinypng', function () {
-    gulp.src(public_path + 'img/*.png')
+    gulp.src(public_assets_path + 'img/*.png')
         .pipe(tinypng('UMKBV8s6QuwMtQudUF1BAeejyAQEip4N'))
-        .pipe(gulp.dest(public_path + 'img/'));
+        .pipe(gulp.dest(public_assets_path + 'img/'));
 });
 
 /*
@@ -158,7 +161,9 @@ gulp.task('default', function ()
   // Watch view files
   gulp.watch
   ([
-   views_path + '*.html'],
+   templates_path + '**/*.html',
+   templates_path + '*.html'
+   ],
    function(file)
    {
      return gulp.src
@@ -169,8 +174,8 @@ gulp.task('default', function ()
   // Watch img files
   gulp.watch
   ([
-   public_path + 'img/*.*',
-   public_path + 'img/*/*.*'
+   public_assets_path + 'img/*.*',
+   public_assets_path + 'img/*/*.*'
    ],
    function(file)
    {

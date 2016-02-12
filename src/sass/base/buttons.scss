@@ -1,13 +1,39 @@
-%button {
+/*
+|--------------------------------------------------------------------------
+| Buttons
+|
+| Various button styles that can be used. Apply this class directly
+| in HTML. Then BEM syntax can override if needed.
+|
+| Example:
+|
+| <div class="block">
+|     <a class="block__button button" href=""></a>
+| </div>
+|
+|--------------------------------------------------------------------------
+*/
+
+button,
+input[type="submit"] {
+
+  cursor: pointer;
+  transition: color 0.2s, background 0.2s, opacity 0.2s, border 0.2s;
+}
+
+.button {
 
   display: inline-block;
   padding: .8em 1em;
 
+  background-color: $color-cta-primary;
+  color: #fff;
   cursor: pointer;
   text-decoration: none;
+  transition: color 0.2s, background 0.2s, opacity 0.2s, border 0.2s;
 }
 
-%button--very_small {
+.button--very_small {
 
   @extend %button;
 
@@ -23,7 +49,7 @@
   }
 }
 
-%button--small {
+.button--small {
 
   @extend %button;
 
@@ -58,18 +84,18 @@
   }
 }
 
-%button--large {
+.button--large {
 
   @extend %button;
 
-  background-color: $color_yellow;
+  background-color: $color_brand_primary;
   color: #fff;
   font-size: 16px;
 
   &:hover, &:focus {
 
     outline: 0;
-    background-color: lighten($color_yellow, 10);
+    background-color: lighten($color_brand_primary, 10);
   }
 
   @media only screen and (min-width: 1000px) {
@@ -78,12 +104,12 @@
   }
 }
 
-%button--hollow {
+.button--hollow {
 
   @extend %button;
 
   border: 1px solid $color_grey;
-  color: $color_grey_light;
+  color: $color_grey;
   font-size: 14px;
   letter-spacing: .5px;
   line-height: 1.5;
@@ -92,7 +118,7 @@
   &:hover, &:focus {
 
     outline: 0;
-    border: 1px solid $color_grey_light;
+    border: 1px solid $color_grey;
     color: #fff;
   }
 

@@ -1,0 +1,66 @@
+.main-nav {
+
+    text-align: center;
+
+    &__list {
+
+        margin-left: -10px;
+    }
+
+    &__item {
+
+        display: block;
+        padding: 10px;
+
+        @media only screen and (min-width: 768px) {
+
+            display: inline-block;
+        }
+    }
+
+    &__link {
+
+        text-decoration: none;
+    }
+
+    &__list
+    {
+        @media only screen and (max-width: 767px) {
+
+            display: none;
+        }
+    }
+
+    &__bullet
+    {
+        position: absolute;
+        top: -99999px;
+        left: -99999px;
+    }
+
+    &__trigger
+    {
+        position: relative;
+
+        width:100%;
+
+        @media only screen and (min-width: 768px) {
+
+            display: none;
+        }
+
+        &:after
+        {
+            @extend .icon-menu;
+            position: absolute;
+            right: .25em;
+            top: 0;
+            font-size:1.8em;
+        }
+    }
+
+    &__bullet:checked ~ &__list
+    {
+        display:block;
+    }
+}

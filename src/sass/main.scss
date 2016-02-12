@@ -1,22 +1,88 @@
-// Vendor
-@import "../../node_modules/node-reset-scss/scss/reset";
+/*
+|--------------------------------------------------------------------------
+| Main
+|
+| This is the main scss file that pulls in all the other files.
+|--------------------------------------------------------------------------
+*/
+
+
+
+/*
+|--------------------------------------------------------------------------
+| Vendor files
+|
+| Try and use NPM to manage all vendor files if possible.
+|--------------------------------------------------------------------------
+*/
+
+@import "../../node_modules/sanitize.css/sanitize.scss";
 @import "../../node_modules/magnific-popup/src/css/settings";
 @import "../../node_modules/magnific-popup/src/css/main";
 
-// Mixins
+
+
+/*
+|--------------------------------------------------------------------------
+| Mixins
+|
+|
+|--------------------------------------------------------------------------
+*/
+
 @import "mixins/*";
 
-// Base
-@import "base/colors";
-@import "base/fonts";
-@import "base/defaults";
+
+
+/*
+|--------------------------------------------------------------------------
+| Extends
+|
+| Objects that can be extended for use inside of blocks
+|--------------------------------------------------------------------------
+*/
+@import "extends/*";
+
+
+
+/*
+|--------------------------------------------------------------------------
+| Settings
+|
+| Base settings for the site
+|--------------------------------------------------------------------------
+*/
+
+@import "setting/layout-settings";
+@import "setting/fonts";
+@import "setting/icons";
+@import "setting/colors";
+
+
+
+/*
+|--------------------------------------------------------------------------
+| Base
+|
+| Basic building blocks, these are similar to blocks, but used more
+| globally.
+|--------------------------------------------------------------------------
+*/
+
 @import "base/grid";
-@import "base/icons";
+@import "base/typography";
+@import "base/buttons";
+@import "base/image-wrap";
+@import "base/links";
 
 
-// Extends
-@import "extends/buttons";
-@import "extends/typography";
 
-// Blocks
+/*
+|--------------------------------------------------------------------------
+| Blocks
+|
+| Each block should be saved in it’s own file.
+|--------------------------------------------------------------------------
+*/
+
 @import "blocks/*";

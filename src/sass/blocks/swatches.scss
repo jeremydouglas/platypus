@@ -1,0 +1,64 @@
+.swatches {
+
+    @include clearfix;
+
+    @extend %list-clean;
+
+    margin-top: 50px;
+    width: 100%;
+
+    &__swatch {
+
+        @extend %list-clean;
+
+        display: block;
+        padding-top: 100px;
+        width: 100%;
+
+        background-color: #eee;
+
+        @media only screen and (min-width: 768px) {
+
+            @include block-grid(5, 2%);
+            padding-bottom: 0;
+        }
+
+        &--brand-primary {
+
+            background-color: $color-brand-primary;
+        }
+
+        &--cta-primary {
+
+            background-color: $color-cta-primary;
+        }
+
+        &--accent-primary {
+
+            background-color: $color-accent-primary;
+        }
+
+        &--black {
+
+            background-color: $color-black;
+        }
+
+        &--grey {
+
+            background-color: $color-grey;
+        }
+    }
+
+    &__name {
+
+        display: block;
+        padding: 15px;
+        width: 100%;
+
+        background-color: #fff;
+        font-size: 10px;
+        letter-spacing: .05em;
+        text-align: center;
+        text-transform: uppercase;
+    }
+}

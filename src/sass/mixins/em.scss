@@ -1,3 +1,11 @@
+/*
+|--------------------------------------------------------------------------
+| EM
+|
+| Function for calcuating pixels to ems quickly.
+|--------------------------------------------------------------------------
+*/
+
 $browser-context: 16; // Default
 
 @function em($pixels, $context: $browser-context) {
