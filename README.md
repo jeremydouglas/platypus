@@ -1,63 +1,46 @@
-Sass Boilerplate
-=========
+# Platypus Boilerplate
 
-This repository is a starting point for frontend development.
+This repository is a starting point for frontend development. It’s a compilation of pieces that we’ve adapted from different frameworks. The intention is to be very minimal, but also included the base set of files that are typically used on a project.
 
-```
-/sass/
-  ├── main.scss
-  ├── base/
-  │   ├── colors.scss
-  │   ├── fonts.scss
-  │   ├── defaults.scss
-  │   ├── icons.scss
-  │   └── grid.scss
-  ├── blocks/
-  │   ├── browsehappy.scss
-  │   ├── site_header.scss
-  │   ├── site_logo.scss
-  │   ├── site_footer.scss
-  │   ├── header.scss
-  │   ├── footer.scss
-  │   ├── main_nav.scss
-  │   ├── wysiwyg.scss
-  │   └── social_profile_links.scss
-  ├── extends/
-  │   ├── buttons.scss
-  │   └──  typography.scss
-  └── mixins/
-      ├── clearfix.scss
-      ├── antialias.scss
-      ├── em.scss
-      ├── font_face.scss
-      ├── image_wrap.scss
-      ├── justified_grid.scss
-      └── matrix_grid.scss
-/js/
-  ├── end.js
-  ├── head.js
-  └── end_blocks/
-  └── head_blocks/
-```
+## Key concepts
+We’re using the [BEM](https://en.bem.info) naming conventions. For a complete overview on how we work, see our [front-end dev standards](http://compasscreative.ca/front-end-dev-standards).
 
-#### Gulpfile.js
+### Settings
+The /src/sass/settings directory contains the base settings for the app. Fonts and icons are also set here.
+
+### Base
+The /src/sass/base directory contains high level components which are similar to blocks, but used on a more ubiquitously throughout the site. In here you’ll find the buttons, grid, responsive image function, links and typography styles.
+
+### Blocks
+Each block will receive it’s own file in the /src/sass/blocks directory, named after itself and containing the elements relative to itself. Breaking blocks into files helps to quickly find blocks down the road.
+
+### Mixins, Extends and Functions
+We have some starter mixins and extends included. Feel free to add more, functions can go in the mixins folder, or you can start a new functions directory if you choose.
+
+### Transitions
+We have a transitions folder where you can keep css transitions and reference them from blocks as needed.
+
+## NPM
+
+We use NPM to pull in dependencies, including scss, js assets and [gulp](http://gulpjs.com).
 
 To install Node visit [https://nodejs.org/download](https://nodejs.org/download/).
 
-To install gulp, run the following command:
+The run the dependencies install for this project:
 
 ```
-$ npm install gulp -g
+$ npm install --save-dev
 ```
 
-When you’re done, install the rest of the theme's dependencies:
+## Gulp
 
-```
-$ npm install
-```
+We use gulp as a task runner to compile assets, minify images and run liverload.
+
+Once you have the NPM packages installed, you’ll have Gulp installed as well.
 
 From here on out, simply run `gulp` from your terminal and you're good to go!
 ```
 $ gulp
 ```
-+ `gulp` - recompiles and minifies your theme assets.
+
+`gulp` - recompiles and minifies your theme assets, runs [livereload](http://livereload.com). To get livereload working with your browser, you'll need to install a [browser extension](http://livereload.com/extensions/).
