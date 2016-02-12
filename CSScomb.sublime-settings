@@ -11,7 +11,7 @@
       "leading-zero": true,
       "quotes": "single",
       "sort-order-fallback": "abc",
-      "space-before-colon": " ",
+      "space-before-colon": "",
       "space-after-colon": " ",
       "space-before-combinator": " ",
       "space-after-combinator": " ",
@@ -25,6 +25,7 @@
       "strip-spaces": true,
       "tab-size": 4,
       "vendor-prefix-align": true,
+      "unitless-zero": true,
       "sort-order": [
             // Variables and Extends
             [

@@ -11,7 +11,6 @@
 */
 
 @mixin block-grid($column-count: 2, $gutter: 1%) {
-
     $gutter-count: $column-count - 1;
     $total-gutter-widths: $gutter-count * $gutter;
     $total-column-widths: 100 - $total-gutter-widths;
@@ -24,7 +23,6 @@
     padding-bottom: $gutter;
 
     &:nth-of-type(1n) {
-
         float: left;
         clear: none;
         margin-right: $gutter;
@@ -33,13 +31,11 @@
     width: $column-width;
 
     &:nth-of-type(#{$column-count}n + 1), &.child-#{$column-count}n-1 {
-
         clear: both;
         margin-left: 0;
     }
 
     &:nth-of-type(#{$column-count}n) {
-
         margin-right: 0;
     }
 }

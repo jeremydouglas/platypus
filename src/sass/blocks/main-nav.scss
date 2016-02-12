@@ -1,66 +1,65 @@
-.main-nav {
+/*
+|--------------------------------------------------------------------------
+| Main Nav
+|
+| Using the label and input as for the mobile version.
+|--------------------------------------------------------------------------
+*/
 
+.main-nav {
     text-align: center;
 
     &__list {
-
         margin-left: -10px;
     }
 
     &__item {
-
         display: block;
         padding: 10px;
 
         @media only screen and (min-width: 768px) {
-
             display: inline-block;
         }
     }
 
     &__link {
-
         text-decoration: none;
     }
 
-    &__list
-    {
-        @media only screen and (max-width: 767px) {
+    &__list {
 
+        @media only screen and (max-width: 767px) {
             display: none;
         }
     }
 
-    &__bullet
-    {
+    &__bullet {
+        left: -99999px;
         position: absolute;
         top: -99999px;
-        left: -99999px;
     }
 
-    &__trigger
-    {
+    &__trigger {
         position: relative;
 
-        width:100%;
+        width: 100%;
 
         @media only screen and (min-width: 768px) {
-
             display: none;
         }
 
-        &:after
-        {
+        &:after {
             @extend .icon-menu;
+
             position: absolute;
-            right: .25em;
+            right: 0.25em;
             top: 0;
-            font-size:1.8em;
+
+            font-size: 1.8em;
         }
     }
 
-    &__bullet:checked ~ &__list
-    {
-        display:block;
+    &__bullet:checked ~ &__list {
+        display: block;
     }
 }

@@ -1,7 +1,5 @@
 .social-profile-links {
-
     &__title {
-
         margin-bottom: 20px;
 
         font-size: 10px;
@@ -9,25 +7,22 @@
     }
 
     &__list {
-
         @extend %list-reset;
     }
 
     &__item {
-
         @extend %list-reset;
 
         display: inline-block;
     }
 
     &__item--facebook &__link {
-
         @extend %icon__facebook;
+
         font-size: 28px;
     }
 
     &__item--linkedin &__link {
-
         @extend %icon__linkedin;
 
         position: relative;
@@ -36,7 +31,6 @@
     }
 
     &__item--youtube &__link {
-
         @extend %icon__youtube;
 
         position: relative;
@@ -45,7 +39,6 @@
     }
 
     &__link {
-
         @extend %icon;
 
         display: block;
@@ -54,13 +47,11 @@
         text-decoration: none;
 
         &:before {
-
             display: inline-block;
             padding: 5px 15px;
             width: 100%;
 
             @media only screen and (min-width: $site_width) {
-
                 position: relative;
                 top: -7px;
 
@@ -70,14 +61,12 @@
         }
 
         &:hover, &:focus {
-
-            outline: 0;
             color: $color_black;
+            outline: 0;
         }
     }
 
     &__text {
-
         left: -99999px;
         position: absolute;
 
