@@ -41,7 +41,8 @@ Please review the below upon launch of any website. Change the - N - to - Y - on
 - N - 404 Page exists and is customized
 - N - 301 Redirects (for old pages)
 
-- N - Robots.txt File exists and is appropriate
+- N - Robots.txt File exists and is appropriate.
+- N - Add form success pages to Robots.txt file
 - N - Common Domain Naming Scheme (n - www’s or trailing slashes)
 - N - A single domain is enforced (usually no www), enforced through .htaccess
 
