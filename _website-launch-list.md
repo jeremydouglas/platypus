@@ -6,7 +6,7 @@ Please review the below upon launch of any website. Change the - N - to - Y - on
 
 ## Accounts
 
-- N - Setup Mail delivery account (usually Send Grid)
+- N - Setup Mail delivery account (usually Postmark)
 - N - Setup Google webmaster Tools
 - N - Submit [sitemap](https://support.google.com/webmasters/answer/183668?hl=en&ref_topic=4581190) to webmaster tools
 - N - Install Google Analytics
