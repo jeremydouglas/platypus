@@ -145,7 +145,7 @@ gulp.task('default', function ()
   // Watch main.js files
   gulp.watch
   ([
-   dev_path + 'js/end_blocks/*.js',
+   dev_path + 'js/end-blocks/*.js',
    dev_path + 'js/end.js'
    ],
    ['js']);
@@ -154,7 +154,7 @@ gulp.task('default', function ()
   gulp.watch
   ([
    dev_path + 'js/head.js',
-   dev_path + 'js/head_blocks/*.js'
+   dev_path + 'js/head-blocks/*.js'
    ],
    ['headjs']);
 
