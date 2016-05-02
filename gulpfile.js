@@ -28,9 +28,9 @@ var sourcemaps = require('gulp-sourcemaps');
 var uglify = require('gulp-uglify');
 
 // Image compression
-var imagemin = require('gulp-imagemin');
-var pngquant = require('imagemin-pngquant');
-var tinypng = require('gulp-tinypng');
+// var imagemin = require('gulp-imagemin');
+// var pngquant = require('imagemin-pngquant');
+// var tinypng = require('gulp-tinypng');
 
 /*
 |--------------------------------------------------------------------------
@@ -106,21 +106,21 @@ gulp.task('headjs', function() {
 |--------------------------------------------------------------------------
 */
 
-gulp.task('images', function () {
-  return gulp.src(public_assets_path + 'img/*')
-  .pipe(imagemin({
-    progressive: true,
-    svgoPlugins: [{removeViewBox: false}],
-    use: [pngquant()]
-  }))
-  .pipe(gulp.dest(public_assets_path + 'img/'));
-});
+// gulp.task('images', function () {
+//   return gulp.src(public_assets_path + 'img/*')
+//   .pipe(imagemin({
+//     progressive: true,
+//     svgoPlugins: [{removeViewBox: false}],
+//     use: [pngquant()]
+//   }))
+//   .pipe(gulp.dest(public_assets_path + 'img/'));
+// });
 
-gulp.task('tinypng', function () {
-    gulp.src(public_assets_path + 'img/*.png')
-        .pipe(tinypng('UMKBV8s6QuwMtQudUF1BAeejyAQEip4N'))
-        .pipe(gulp.dest(public_assets_path + 'img/'));
-});
+// gulp.task('tinypng', function () {
+//     gulp.src(public_assets_path + 'img/*.png')
+//         .pipe(tinypng('UMKBV8s6QuwMtQudUF1BAeejyAQEip4N'))
+//         .pipe(gulp.dest(public_assets_path + 'img/'));
+// });
 
 /*
 |--------------------------------------------------------------------------
@@ -145,7 +145,7 @@ gulp.task('default', function ()
   // Watch main.js files
   gulp.watch
   ([
-   dev_path + 'js/end_blocks/*.js',
+   dev_path + 'js/end-blocks/*.js',
    dev_path + 'js/end.js'
    ],
    ['js']);
@@ -154,7 +154,7 @@ gulp.task('default', function ()
   gulp.watch
   ([
    dev_path + 'js/head.js',
-   dev_path + 'js/head_blocks/*.js'
+   dev_path + 'js/head-blocks/*.js'
    ],
    ['headjs']);
 
@@ -172,15 +172,15 @@ gulp.task('default', function ()
    });
 
   // Watch img files
-  gulp.watch
-  ([
-   public_assets_path + 'img/*.*',
-   public_assets_path + 'img/*/*.*'
-   ],
-   function(file)
-   {
-     return gulp.src
-     ([file.path])
-     .pipe(livereload());
-   });
+  // gulp.watch
+  // ([
+  //  public_assets_path + 'img/*.*',
+  //  public_assets_path + 'img/*/*.*'
+  //  ],
+  //  function(file)
+  //  {
+  //    return gulp.src
+  //    ([file.path])
+  //    .pipe(livereload());
+  //  });
 });
