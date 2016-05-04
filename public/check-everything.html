@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html class="no-js" lang="en-us">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css" integrity="sha384-XXXXXXXX" crossorigin="anonymous">
+
+    <title>Check your site everywhere</title>
+
+
+</head>
+
+<body>
+
+    <div class="center-block">
+        <div class="container text-sm-center">
+            <div class="row">
+                <div class="center-block">
+                    <h1>Check your site:</h1>
+                </div>
+            </div>
+            <div class="row">
+                <fieldset class="form-group">
+                    <input class="form-control" id="domain" type="text" name="domain" value="http://acornlandscapesupply.ca">
+                    <a href="#" class="btn btn-primary">Go</a>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+
+    <script   src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
+    <script>
+
+        $(function() {
+
+            $('.btn-primary').click(function() {
+
+                url = $('#domain').val();
+                url = encodeURI(url);
+                console.log(url);
+                window.open('https://developers.google.com/speed/pagespeed/insights/?url=' + url, 'Google Pagespeed');
+                window.open('https://www.google.ca/webmasters/tools/mobile-friendly/?url=' + url, 'Google Mobility');
+                window.open('http://validator.w3.org/checklink?uri='+url+'&hide_type=all&depth=&check=Check', 'Validate');
+                window.open('http://intodns.com/check/?domain='+url, 'DNS');
+                window.open('http://achecker.ca/checker/index.php', 'A checker');
+                window.open('http://www.copyscape.com/?q='+url, 'Copyscape');
+                window.open('http://peek.usertesting.com/order?test_type=1&url='+url+'&name=', 'Peek');
+            });
+        });
+    </script>
+
+</body>
+</html>
