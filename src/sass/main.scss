@@ -16,7 +16,7 @@
 |--------------------------------------------------------------------------
 */
 
-@import "../../node_modules/sanitize.css/sanitize.scss";
+@import "../../node_modules/sanitize.css/lib/sanitize.scss";
 @import "../../node_modules/magnific-popup/src/css/settings";
 @import "../../node_modules/magnific-popup/src/css/main";
 
@@ -54,10 +54,10 @@
 |--------------------------------------------------------------------------
 */
 
-@import "setting/layout-settings";
-@import "setting/fonts";
-@import "setting/icons";
-@import "setting/colors";
+@import "settings/layout-settings";
+@import "settings/fonts";
+@import "settings/icons";
+@import "settings/colors";
 
 
 
