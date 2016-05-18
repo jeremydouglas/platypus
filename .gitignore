@@ -1,5 +1,4 @@
 node_modules
-vendor
 # OS or Editor folders
 .DS_Store
 .cache
