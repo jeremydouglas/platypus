@@ -87,7 +87,7 @@ button, input[type='submit'] {
         outline: 0;
     }
 
-    @media only screen and (min-width: 1000px) {
+    @media (min-width: 1000px) {
         font-size: 20px;
     }
 }

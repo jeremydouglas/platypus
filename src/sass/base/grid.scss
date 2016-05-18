@@ -19,15 +19,15 @@
         max-width: $site-width + $global-padding*2;
         padding: 0 $global-padding / 2;
 
-        @media only screen and (min-width: 1000px) {
+        @media (min-width: 1000px) {
             padding: 0 $global-padding;
         }
 
-        @media only screen and (min-width: 768px) and (max-width: 999px) {
+        @media (min-width: 768px) and (max-width: 999px) {
             max-width: 768px;
         }
 
-        @media only screen and (min-width: 1000px) and (max-width: $site-width - 1px) {
+        @media (min-width: 1000px) and (max-width: $site-width - 1px) {
             max-width: 1000px;
         }
 
@@ -37,14 +37,14 @@
     }
 
     &__article {
-        @media only screen and (min-width: 768px) {
+        @media (min-width: 768px) {
             float: left;
             width: 65%;
         }
     }
 
     &__aside {
-        @media only screen and (min-width: 768px) {
+        @media (min-width: 768px) {
             float: left;
             width: 35%;
         }
