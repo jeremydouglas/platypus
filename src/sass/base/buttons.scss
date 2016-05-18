@@ -19,7 +19,7 @@ button, input[type='submit'] {
     transition: color 0.2s, background 0.2s, opacity 0.2s, border 0.2s;
 }
 
-.button {
+.button, %button {
     display: inline-block;
     padding: 0.8em 1em;
 
