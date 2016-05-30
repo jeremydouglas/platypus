@@ -7,7 +7,7 @@
 |--------------------------------------------------------------------------
 */
 
-@mixin aspect_ratio($w, $h) {
+@mixin aspect-ratio($w, $h) {
   position: relative;
 
   &:before {
