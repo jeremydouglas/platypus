@@ -8,4 +8,8 @@ nbproject
 Thumbs.db
 .sass-cache
 .gulp
+<<<<<<< HEAD
 .sublime-gulp.cache
+=======
+.sublime-gulp.cache
+>>>>>>> master

@@ -7,11 +7,11 @@
     }
 
     &__list {
-        @extend %list-reset;
+        @extend %list-clean;
     }
 
     &__item {
-        @extend %list-reset;
+        @extend %list-clean;
 
         display: inline-block;
     }
